@@ -28,17 +28,17 @@ resource "aws_key_pair" "main_key_pair" {
 
 ### USERS ###
 
-resource "aws_iam_user" "backuper" {
-  name = "backuper"
+resource "aws_iam_user" "backup" {
+  name = "backup"
 }
 
-resource "aws_iam_access_key" "backuper_key" {
-  user = "${aws_iam_user.backuper.name}"
+resource "aws_iam_access_key" "backup" {
+  user = "${aws_iam_user.backup.name}"
 }
 
 resource "aws_iam_user_policy" "s3_policy" {
   name = "s3_policy"
-  user = "${aws_iam_user.backuper.name}"
+  user = "${aws_iam_user.backup.name}"
 
   policy = <<EOF
 {
