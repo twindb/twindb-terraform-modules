@@ -37,7 +37,7 @@ resource "aws_iam_access_key" "backuper_key" {
 }
 
 resource "aws_iam_user_policy" "s3_policy" {
-  name = "test"
+  name = "s3_policy"
   user = "${aws_iam_user.backuper.name}"
 
   policy = <<EOF
