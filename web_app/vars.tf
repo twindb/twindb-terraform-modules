@@ -141,5 +141,5 @@ variable "elb_health_check_interval" {
 }
 
 variable "ebs_optimized" {
-  default = false
+  default = true
 }
