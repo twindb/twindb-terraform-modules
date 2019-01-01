@@ -39,6 +39,7 @@ resource "aws_instance" "website" {
     delete_on_termination = true
   }
 
+  ebs_optimized = "${var.ebs_optimized}"
   tags {
     Name = "web_app_${var.environment}_${count.index}"
   }

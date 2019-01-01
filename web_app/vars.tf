@@ -139,3 +139,7 @@ variable "elb_health_check_interval" {
   description = "interval"
   default = 30
 }
+
+variable "ebs_optimized" {
+  default = false
+}
