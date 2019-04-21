@@ -45,6 +45,18 @@ resource "aws_instance" "website" {
   }
   count = "${var.count}"
 
+  provisioner "chef" {
+    node_name = "web_app_${var.environment}_${count.index}"
+    server_url = "${var.server_url}"
+    user_name = "${var.username}"
+    user_key = "${var.user_key}"
+    secret_key = "${var.secret_key}"
+    run_list = [
+      "role[www_webserver]"
+    ]
+    environment = "${var.environment}"
+  }
+
 }
 
 

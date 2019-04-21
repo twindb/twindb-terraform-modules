@@ -143,3 +143,21 @@ variable "elb_health_check_interval" {
 variable "ebs_optimized" {
   default = true
 }
+
+variable "server_url" {
+  description = "The URL to the Chef server"
+  default = "https://api.chef.io/organizations/twindb"
+}
+
+variable "username" {
+  description = "The name of an existing Chef user to register the new Chef Client"
+  default = "centos"
+}
+
+variable "secret_key" {
+  description = "The contents of the secret key that is used by the Chef Client to decrypt data bags on the Chef Server."
+}
+
+variable "user_key" {
+  description = "The contents of the user key that will be used to authenticate with the Chef Server. "
+}
